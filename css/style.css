@@ -1,0 +1,111 @@
+/* Base Styling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fffbea; /* Soft yellow background */
+    padding: 5px;
+    margin: 15px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    color: #4f4f4f;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    color: #b8860b; /* Goldenrod for headings */
+}
+
+h2 {
+    text-align: center;
+    color: #8b8000; /* Darker yellow for contrast */
+}
+
+/* Link Styling */
+a {
+    color: #b8860b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffecb3; /* Lighter yellow on hover */
+}
+
+/* List Styling */
+li {
+    margin-top: 20px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+/* Image Styling */
+img {
+    border: 3px solid #b8860b; /* Border to match theme */
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Label Styling */
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Media Queries */
+
+/* Tablet View */
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    figure {
+        border-radius: 50%; /* Circular images */
+    }
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Large Screen View */
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    figure {
+        border-radius: 0; /* Remove roundness */
+    }
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+/* Accessibility Preferences */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #4f4f4f;
+        color: #ffeb3b;
+    }
+    img {
+        border-color: #ffeb3b; /* Bright yellow border */
+    }
+    h1, h2, a {
+        color: #ffeb3b;
+    }
+}
